@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>To Coorg Today | Luxury Travel Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+      body {
+  background: #f7f7f7;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #555 !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #2a5d4d !important;
+}
+
+/* Carousel */
+.carousel-item img {
+  height: 90vh;
+  object-fit: cover;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+}
+
+.carousel-caption {
+  bottom: 25%;
+  left: 8%;
+  text-align: left;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
+  padding: 1.6rem;
+  border-radius: 12px;
+}
+
+.carousel-caption h1 {
+  color: #2a5d4d;
+  font-size: 3rem;
+}
+
+.carousel-caption p {
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.card img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.btn {
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-outline-success {
+  color: #2a5d4d;
+  border-color: #2a5d4d;
+}
+
+.btn-outline-success:hover {
+  background-color: #2a5d4d;
+  color: white;
+}
+
+/* About Boxes */
+.about-box {
+  background-color: white !important;
+  transition: 0.4s ease;
+  border-radius: 12px;
+}
+
+.about-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-left: 4px solid #2a5d4d;
+}
+
+/* Section Titles */
+.section-title {
+  color: #2a5d4d;
+  letter-spacing: 1px;
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  letter-spacing: 0.5px;
+}
+
+.about-box h2 {
+  color: #2a5d4d;
+}
+
+#mainNavbar {
+  transition: 0.4s ease;
+  background: transparent;
+}
+
+#mainNavbar.scrolled {
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #c6a75e, #e8d7a5);
+  margin: 15px auto;
+}
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, #c6a75e, #2a5d4d);
+  width: 0%;
+  z-index: 9999;
+}
+
+.carousel-item img {
+  transform: scale(1.05);
+  transition: transform 6s ease;
+}
+
+.carousel-item.active img {
+  transform: scale(1.15);
+}
+
+body {
+  animation: fadeBody 1.2s ease;
+}
+
+@keyframes fadeBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.btn-outline-success:hover {
+  background-color: #2a5d4d;
+  color: white;
+  box-shadow: 0 0 15px rgba(198,167,94,0.6);
+}
+
+.card img {
+  border-radius: 12px 12px 0 0;
+}
+    </style>
+</head>
+<script>
+  window.addEventListener('scroll', function() {
+    let reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(function(element) {
+      let windowHeight = window.innerHeight;
+      let elementTop = element.getBoundingClientRect().top;
+      let revealPoint = 100;
+
+      if (elementTop < windowHeight - revealPoint) {
+        element.classList.add('active');
+      }
+    });
+  });
+</script>
+<body>
+  <div id="progressBar"></div>
+    <!--Nav Bar-->
+<nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="logo.jpg" 
+    alt="logo" width="80"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#destination">Destination</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#hotels">Hotels</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+    <!--Carousel-->
+  <div id="carouselExampleIndicators" class="carousel carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="home1.jpg" class="d-block w-100" alt="home1">
+    </div>
+    <div class="carousel-item">
+  <img src="home2.jpg" class="d-block w-100" alt="home2">
+
+  <div class="carousel-caption text-start">
+    <h1 class="fw-bold">Experience Pure Happiness</h1>
+    <p>Where misty hills meet peaceful moments.</p>
+    <a href="#" class="btn btn-success btn-lg">Explore Now</a>
+  </div>
+
+</div>
+    <div class="carousel-item">
+  <img src="home3.jpg" class="d-block w-100" alt="home3">
+
+  <div class="carousel-caption text-start">
+    <h1 class="fw-bold">Feel The Nature</h1>
+    <p>Wake up to waterfalls and coffee estates.</p>
+    <a href="#" class="btn btn-success btn-lg">Discover More</a>
+  </div>
+
+</div>
+    <div class="carousel-item">
+  <img src="home5.jpg" class="d-block w-100" alt="home5">
+
+  <div class="carousel-caption text-start">
+    <h1 class="fw-bold">Adventure Awaits You</h1>
+    <p>Off-road jeep rides and breathtaking hill views.</p>
+    <a href="#" class="btn btn-success btn-lg">Start Exploring</a>
+  </div>
+
+</div>
+    <div class="carousel-item">
+  <img src="home4.jpg" class="d-block w-100" alt="home4">
+
+  <div class="carousel-caption text-start">
+    <h1 class="fw-bold">Create Unforgettable Memories</h1>
+    <p>Moments that stay with you forever in Kodagu.</p>
+    <a href="#" class="btn btn-success btn-lg">Plan Your Trip</a>
+  </div>
+
+</div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>    
+
+<div class="text-center py-5">
+  <h3 style="color:#2a5d4d; font-style:italic;">
+    "Travel is not just a journey, it's an experience."
+  </h3>
+</div>
+
+
+<!--Main Container-->
+<div class="container">
+<h1 class="text-center p-5 mb-5 mt-5">Tour To Coorg Today!</h1>
+
+<div class="w-100 bg-dark-subtle p-5 mb-5">
+    <p>Coorg(Kodagu) is a premier travel destination where heritage and nature are inextricably linked, offering a trip that balances deep cultural immersion with ecological exploration. Its importance for trip details lies in providing diverse experiences ranging from spiritual retreats in historic temples to high-energy adventure in its biodiversity hotspots. </p>
+<button type="button" class="btn btn-primary btn-lg">Book Your Trip Now</button>
+</div>
+<h2 id="destination" class="section-title text-center">POPULAR DESTINATIONS</h2>
+<div class="row g-4">
+   <div class="col-md-3">
+
+
+<!--card 1-->
+<div class="card h-100 shadow" >
+  <img src="golden temple.jpg" class="card-img-top" alt="golden temple">
+  <div class="card-body">
+    <h5 class="card-title">Golden Temple</h5>
+    <p class="card-text">The Namdroling Monastery, popularly known as the Golden Temple, is
+a major Tibetan Buddhist center located in Bylakuppe, near Kushalnagar in Kodagu (Coorg), Karnataka. Established in 1963, it features stunning, 60-foot golden statues of Buddha, intricate Tibetan architecture, and serene gardens its a peacefull place.</p>
+    <a href="#" class="btn btn-outline-success">Read More</a>
+  </div>
+</div>
+
+
+</div>
+
+<!--card2-->
+ <div class="col-md-3">
+<div class="card h-100 shadow" >
+  <img src="abbi.jpg" class="card-img-top" alt="abbi">
+  <div class="card-body">
+    <h5 class="card-title">Abbi falls</h5>
+    <p class="card-text">About 9 km from Madikeri is the beautiful sight of an impetuous mountain stream cascading over a rockface.  The refreshingly cool waters of Abbey Falls, and the greenery of the surrounding coffee and cardamom estates make it a very popular picnic spot.</p>
+    <a href="#" class="btn btn-outline-success">Read More</a>
+  </div>
+</div>
+
+
+</div>
+
+<!--card3-->
+<div class="col-md-3">
+<div class="card h-100 shadow" >
+  <img src="talakaveri.jpg" class="card-img-top" alt="talakaveri">
+  <div class="card-body">
+    <h5 class="card-title">Talakaveri</h5>
+    <p class="card-text">Talakaveri, located on the Brahmagiri hills in Kodagu, is the revered birthplace of the sacred Kaveri River. Situated at 1,276 meters, this holy pilgrimage site features a temple dedicated to Goddess Kaveriamma and a sacred tank 46 km from Madikeri.</p>
+    <a href="#" class="btn btn-outline-success">Read More</a>
+  </div>
+</div>
+
+
+</div>
+
+<!--card4-->
+<div class="col-md-3">
+<div class="card h-100 shadow">
+  <img src="dubare.jpg" class="card-img-top" alt="dubare">
+  <div class="card-body">
+    <h5 class="card-title">Dubare</h5>
+    <p class="card-text">The three-hour elephant interaction is destined to be the most unforgettable experience at Dubare camp. It kicks off with a 45 minute bath in the Cauvery, where you scrub an elephant and groom with oil from close proximity. You can also participate in feeding the elephants with ragi, jaggery, sugarcane, banana and coconuts. </p>
+    <a href="#" class="btn btn-outline-success">Read More</a>
+  </div>
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+
+
+<!--About-->
+<div class="container">
+  <h2 id="about" class="fs-1 p-5 mt-5 mb-5 text-center reveal">ABOUT</h2>
+
+  <div class="row g-4">
+
+    <div class="col-md-6">
+      <div class="p-5 h-100 shadow about-box">
+        <h2>Rates</h2>
+        <p>Our tour packages are designed to suit every traveler’s budget while ensuring a comfortable and memorable experience. We offer affordable pricing with flexible plans for individuals, couples, families, and groups. Seasonal discounts and customized packages are also available.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="p-5 h-100 shadow about-box">
+        <h2>Fees</h2>
+        <p>Dubare Elephant Camp – ₹200 to ₹250 (Entry), Elephant interaction extra<br>
+        Abbey Falls – ₹100 per person<br>
+        Raja’s Seat – ₹150 per person<br>
+        Talakaveri Temple – Free entry<br>
+        Mandalpatti – ₹1500 to ₹2000 per jeep</p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="p-5 h-100 shadow about-box">
+        <h2>Popular Sites</h2>
+        <p>Abbey Falls – Waterfall surrounded by coffee plantations<br>
+        Dubare Elephant Camp – Elephant interaction<br>
+        Raja’s Seat – Sunset viewpoint<br>
+        Talakaveri – Birthplace of River Kaveri<br>
+        Mandalpatti – Off-road hill adventure</p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="p-5 h-100 shadow about-box">
+        <h2>Features</h2>
+        <p>Comfortable transport<br>
+        Experienced guides<br>
+        Safe itinerary<br>
+        Transparent pricing<br>
+        24/7 support</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!--Contact Us-->
+<div class="container mb-5">
+  <h2 id="contact" class="section-title text-center">Plan Your Journey</h2>
+
+  <form class="row g-4 shadow p-5 bg-white rounded">
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="Full Name" required>
+    </div>
+
+    <div class="col-md-6">
+      <input type="email" class="form-control" placeholder="Email Address" required>
+    </div>
+
+    <div class="col-md-6">
+      <input type="date" class="form-control" required>
+    </div>
+
+    <div class="col-md-6">
+      <select class="form-select">
+        <option selected>Select Package</option>
+        <option>Adventure Tour</option>
+        <option>Luxury Retreat</option>
+        <option>Family Package</option>
+      </select>
+    </div>
+
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-outline-success btn-lg">
+        Book Your Experience
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="container mb-5">
+  <h2 id="hotels" class="section-title text-center">Luxury Stays in Kodagu</h2>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="https://img.easemytrip.com/emthotel-67693/8/m/l/461750_0.jpg" class="card-img-top" alt="Hotel">
+        <div class="card-body">
+          <h5 class="card-title">Heritage Resort</h5>
+          <p>Experience elegance surrounded by misty hills and coffee plantations.</p>
+          <a href="#" class="btn btn-outline-success">View Rooms</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Hotel">
+        <div class="card-body">
+          <h5 class="card-title">Luxury Hill Retreat</h5>
+          <p>Wake up to breathtaking valley views and serene nature.</p>
+          <a href="#" class="btn btn-outline-success">View Rooms</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" class="card-img-top" alt="Hotel">
+        <div class="card-body">
+          <h5 class="card-title">Premium Forest Villa</h5>
+          <p>Private stay experience with ultimate comfort and style.</p>
+          <a href="#" class="btn btn-outline-success">View Rooms</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--End of the container-->
+
+  <footer class="bg-white text-center py-5">
+  <h4 style="color:#2a5d4d;">To Coorg Today</h4>
+  <p class="text-muted">Where luxury meets nature.</p>
+  <hr style="width:60px;margin:20px auto;border-top:2px solid #c6a75e;">
+  <p class="text-muted mb-0">&copy; 2026 | Designed with elegance by Prathiksha</p>
+  <p><a href="mailto: prathiksha.a.h.8@gmail.com" class="text-white">Email Us</a></p>
+</footer>
+
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>  
+<script>
+window.addEventListener("scroll", function() {
+  let navbar = document.getElementById("mainNavbar");
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+<script>
+window.addEventListener("scroll", function() {
+  let scrollTop = document.documentElement.scrollTop;
+  let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrollPercent = (scrollTop / scrollHeight) * 100;
+  document.getElementById("progressBar").style.width = scrollPercent + "%";
+});
+</script>
+</body>
+</html>
